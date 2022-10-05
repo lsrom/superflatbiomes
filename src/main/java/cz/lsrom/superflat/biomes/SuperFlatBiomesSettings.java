@@ -23,8 +23,5 @@ public class SuperFlatBiomesSettings {
     @Rule(categories = GENERATION)
     public static boolean generateStrongholds = true;
 
-    @Rule(categories = GENERATION)
-    public static boolean generateAncientCities = true;
-
     public static List<Block> worldBlocks = Arrays.asList(Blocks.BEDROCK, Blocks.STONE, Blocks.STONE, Blocks.GRASS_BLOCK);
 }

@@ -3,6 +3,5 @@
   "superflatbiomes.rule.generateFeatures.desc": "Generate features (trees, ice spikes, etc)",
   "superflatbiomes.rule.generateAllStructures.desc": "Generate complete structures (villages, monuments, huts, etc)",
   "superflatbiomes.rule.generateVillages.desc": "Generate village structures, other structures are bounding box only",
-  "superflatbiomes.rule.generateStrongholds.desc": "Generate stronghold structures, other structures are bounding box only",
-  "superflatbiomes.rule.generateAncientCities.desc": "Generate ancient city structures, other structures are bounding box only"
+  "superflatbiomes.rule.generateStrongholds.desc": "Generate stronghold structures, other structures are bounding box only"
 }
