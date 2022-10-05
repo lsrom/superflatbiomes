@@ -2,6 +2,8 @@
 
 This is module for [fabric-carpet](https://github.com/gnembon/fabric-carpet) which will enable you to create superflat worlds with all the biomes. Currently only tested in **1.19**.
 
+Check out some examples of what you can expect [here](showcase/showcase.md) (small gallery).
+
 ## Installation
 
 Grab [release file](https://github.com/lsrom/superflatbiomes/releases/latest) and put it into your Minecraft mod folder. Make sure you have CarpetMod as well.
