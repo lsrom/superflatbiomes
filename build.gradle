@@ -1,0 +1,59 @@
+plugins {
+    id 'fabric-loom' version '1.0-SNAPSHOT'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://masa.dy.fi/maven'
+    }
+}
+
+group 'cz.lsrom'
+version '0.1'
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+loom {
+    accessWidenerPath = file("src/main/resources/${project.mod_id}.accesswidener")
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "carpet:fabric-carpet:${project.carpet_core_version}"
+
+    modImplementation(fabricApi.module("fabric-object-builder-api-v1", project.fabric_api_version))
+    modImplementation(fabricApi.module("fabric-registry-sync-v0", project.fabric_api_version))
+    modImplementation(fabricApi.module("fabric-transitive-access-wideners-v1", project.fabric_api_version))
+
+    modImplementation(fabricApi.module("fabric-resource-loader-v0", project.fabric_api_version))
+}
+
+processResources {
+    def templateContext = [
+            id     : project.mod_id,
+            name   : project.mod_name,
+            version: project.version
+    ]
+
+    inputs.properties templateContext
+
+    from(sourceSets.main.resources.srcDirs) {
+        include "fabric.mod.json"
+        expand templateContext
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude "fabric.mod.json"
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+test {
+    useJUnitPlatform()
+}
