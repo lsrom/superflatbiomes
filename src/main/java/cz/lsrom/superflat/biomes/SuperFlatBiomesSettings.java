@@ -18,7 +18,7 @@ public class SuperFlatBiomesSettings {
     public static boolean generateAllStructures = false;
 
     @Rule(categories = GENERATION)
-    public static boolean generateVillages = false;
+    public static boolean generateVillages = true;
 
     @Rule(categories = GENERATION)
     public static boolean generateStrongholds = true;
